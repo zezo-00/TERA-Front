@@ -1,3 +1,4 @@
+
 :root {
     --main-color: #133265;
     --medium-blue: #1B263B;
@@ -146,7 +147,7 @@ width: auto;
 .cta {
     background-color: #133265;
     color: var(--light-text);
-    padding: 50px;
+    padding: 40px;
     margin: 40px auto;
     max-width: 800px;
     border-radius: 10px;
@@ -185,8 +186,9 @@ width: auto;
     border-radius: 5px;
     background-color: white;
     color: #000000;
+    font-family: var(--main-font);
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -231,11 +233,7 @@ width: auto;
 
 
 
-
-
-/* =========================================
-   ESTILOS DA PÁGINA SOBRE NÓS
-   ========================================= */
+/*PÁGINA SOBRE NÓS*/
 
 .hero-interno {
     height: 40vh; 
@@ -245,6 +243,12 @@ width: auto;
     align-items: center;
     color: white; 
     text-align: center;
+    
+    background-color: #133265; 
+    background-image: url('../assets/images/grafico_fundo_melhorado.jpg');
+    background-size: cover;
+    background-position: center;
+    
 }
 
 .título {
@@ -300,5 +304,152 @@ width: auto;
 @media (max-width: 768px) {
     .sobre-grid {
         flex-direction: column;
+    }
+}
+
+
+
+/* ---PÁGINA NEWSLETTER--- */
+
+
+/* Fundo branco e espaçamento geral */
+.conteudo-branco {
+    background-color: white;
+    padding: 80px 0;
+}
+
+/* Limita a largura do texto para ficar confortável de ler */
+.newsletter-container {
+    max-width: 900px;
+    margin: 0 auto;
+
+}
+
+/* Título e Texto Introdutório */
+.titulo-principal {
+    font-size: 2rem;
+    color: #292929; /* Azul TERA */
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.texto-corrido {
+    font-size: 1.1rem;
+    color: #444;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 50px;
+}
+
+/* --- CAIXA DE BENEFÍCIOS (CARD CINZA) --- */
+.benefits-box {
+    background-color: #f8f9fa; /* Cinza bem clarinho */
+    border: 1px solid #e1e4e8;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Sombra suave */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Faixa azul decorativa no topo do card */
+.benefits-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #292929, #0077b5);
+}
+
+.benefits-box h3 {
+    font-size: 1.4rem;
+    color: #292929;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Lista de Itens */
+.benefits-list {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.benefits-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    color: #333;
+    background-color: white; /* Fundo branco em cada item */
+    padding: 12px 20px;
+    border-radius: 8px;
+    border-left: 4px solid #292929; /* Detalhe azul na esquerda */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.check-icon {
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+/* --- BOTÃO ESTILO LINKEDIN --- */
+.cta-area {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px dashed #ccc;
+}
+
+.cta-chamada {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.btn-linkedin {
+    display: inline-block;
+    background-color: #133265; /* Azul Oficial do LinkedIn */
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 16px 50px;
+    border-radius: 50px; /* Botão Redondo */
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 119, 181, 0.4);
+}
+
+.btn-linkedin:hover {
+    background-color: #0083ca;
+    transform: translateY(-4px); /* Sobe um pouco */
+    box-shadow: 0 8px 25px rgba(0, 102, 157, 0.5);
+}
+
+/* Texto Final Pequeno */
+.texto-final {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 0.9rem;
+    color: #888;
+    font-style: italic;
+}
+
+/* Ajuste para Celular */
+@media (max-width: 600px) {
+    .benefits-box {
+        padding: 20px;
+    }
+    .titulo-principal {
+        font-size: 1.6rem;
+    }
+    .btn-linkedin {
+        width: 100%;
+        padding: 15px 0;
     }
 }
