@@ -1,0 +1,74 @@
+/* --- ESTILOS GERAIS --- */
+.label-group { display: flex; align-items: center; gap: 12px; margin-bottom: 1.5rem; }
+.label-line { width: 3px; height: 20px; background-color: var(--tera-blue-mid); border-radius: 2px; }
+.section-label { font-family: var(--font-body); font-size: 0.85rem; font-weight: 200; letter-spacing: 2px; color: var(--tera-blue-mid); }
+
+/* --- 1. HERO SECTION (SEU CSS MODIFICADO) --- */
+.hero-section {
+  background-color: var(--tera-blue-dark);
+  background-image: linear-gradient(rgba(15, 53, 98, 0.85), rgba(15, 53, 98, 0.85)), url('/assets/images/grafico_fundo_melhorado.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 8rem 8%;
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+}
+
+.hero-content { max-width: 800px; text-align: left; }
+.hero-label { color: var(--tera-white); font-family: var(--font-body); font-size: 0.85rem; font-weight: 200; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; display: block; margin-bottom: 1.5rem; }
+.hero-title { font-family: var(--font-title); font-size: 4.5rem; color: var(--tera-white); font-weight: 400; line-height: 1.1; margin-bottom: 1.5rem; }
+.hero-subtitle { font-family: var(--font-title); font-size: 1.25rem; color: var(--tera-grey); font-weight: 300; line-height: 1.6; margin-bottom: 3rem; max-width: 650px; }
+.hero-buttons { display: flex; gap: 1.5rem; }
+
+.btn-outline, .btn-solid, .btn-outline-dark {
+  padding: 1rem 2rem;
+  font-family: var(--font-title);
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-outline { background: transparent; color: var(--tera-white); border: 1px solid var(--tera-white); font-weight: 300; }
+.btn-outline:hover { background: var(--tera-white); color: var(--tera-blue-dark); }
+.btn-solid { background: var(--tera-blue-mid); color: var(--tera-white); border: none; font-weight: 200; }
+.btn-solid:hover { filter: brightness(1.2); }
+.btn-outline-dark { background: transparent; color: var(--tera-black); border: 1px solid var(--tera-black); font-weight: 300; margin-top: 2rem; }
+
+/* --- 2. EXPERTISE (CARDS) --- */
+.expertise-section { padding: 6rem 8%; background-color: #fcfcfc; }
+.section-main-title { font-family: var(--font-title); font-size: 2.8rem; margin-bottom: 1rem; color: var(--tera-black); font-weight: 400; }
+.section-description { font-family: var(--font-body); color: #666; font-size: 1.1rem; margin-bottom: 4rem; font-weight: 300; }
+.expertise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.expertise-card { background: white; padding: 3rem 2rem; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column; gap: 1.5rem; transition: 0.3s; }
+.expertise-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+.card-icon { font-size: 2.5rem; }
+.expertise-card h3 { font-family: var(--font-title); font-size: 1.6rem; color: var(--tera-blue-dark); font-weight: 400; }
+.expertise-card p { font-family: var(--font-body); color: #555; line-height: 1.6; font-weight: 300; }
+.card-link { background: none; border: none; color: var(--tera-blue-mid); font-weight: 700; cursor: pointer; text-align: left; padding: 0; font-family: var(--font-title); }
+
+/* --- 3. OPORTUNIDADES (FOTO + TEXTO) --- */
+.opportunities-section { padding: 6rem 8%; display: flex; align-items: center; gap: 5rem; background-color: white; }
+.opp-image-container { flex: 1; }
+.opp-img { width: 100%; border-radius: 12px; object-fit: cover; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.opp-text-container { flex: 1; }
+.opp-title { font-family: var(--font-title); font-size: 3rem; line-height: 1.1; margin-bottom: 2rem; font-weight: 400; }
+.opp-text { font-family: var(--font-body); color: #555; line-height: 1.8; font-size: 1.1rem; font-weight: 300; }
+
+/* --- 4. PILARES --- */
+.pillars-section { padding: 6rem 8%; text-align: center; background-color: #f9f9f9; }
+.pillars-label { font-family: var(--font-body); font-size: 0.8rem; letter-spacing: 3px; color: #999; display: block; margin-bottom: 1rem; }
+.pillars-title { font-family: var(--font-title); font-size: 2.5rem; margin-bottom: 4rem; font-weight: 400; }
+.pillars-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+.pillar-item { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.pillar-icon-box { font-size: 2rem; width: 60px; height: 60px; border: 1px solid #ddd; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+.pillar-item h4 { font-family: var(--font-title); font-size: 1.3rem; font-weight: 400; }
+.pillar-item p { font-family: var(--font-body); font-size: 0.95rem; color: #777; font-weight: 300; }
+
+/* --- 5. CTA FINAL --- */
+.cta-final { padding: 8rem 8%; background-color: var(--tera-blue-dark); text-align: center; display: flex; flex-direction: column; align-items: center; gap: 2.5rem; }
+.cta-final h2 { color: var(--tera-white); font-family: var(--font-title); font-size: 2.8rem; font-weight: 400; max-width: 600px; }

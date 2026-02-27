@@ -1,0 +1,77 @@
+.navbar-container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 1.5rem 8%; 
+  background-color: var(--tera-white);
+}
+
+/* --- NOVA ESTRUTURA DA LOGO --- */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.navbar-icon-wrapper {
+  background-color: var(--tera-blue-dark); 
+  padding: 8px; 
+  border-radius: 8px; 
+  height: 48px; 
+  width: 48px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.navbar-brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tera-title {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  color: var(--tera-black);
+  line-height: 1;
+  letter-spacing: 1.5px;
+}
+
+.tera-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--tera-blue-mid);
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  margin-top: 4px;
+}
+/* ------------------------------ */
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem; 
+}
+
+.navbar-links a {
+  color: black; 
+  font-family: var(--font-title);
+  font-weight: 100; 
+  font-size: 0.95rem; 
+  text-decoration: none; 
+  opacity: 60%;
+}
+
+.navbar-links a:hover {
+  opacity: 0.9; 
+  color: #0F3562; 
+  transition: 0.3s;
+}
