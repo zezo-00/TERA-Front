@@ -43,9 +43,7 @@ Siga os passos abaixo para visualizar o site em sua máquina local:
 
 ---
 
-### 📝 Observações
-* Design 100% revisado para seguir o modelo do Figma apresentado em vídeo.
-* Estrutura de pastas organizada para escalabilidade do front-end.
+### 📝 Observação
 * O foco da branch `main` é estritamente a execução da interface.
 
 ---
