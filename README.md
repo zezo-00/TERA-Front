@@ -1,50 +1,61 @@
-# TERA - Gestão e Negócios 🚀
+TERA — Gestão e Negócios 🚀
+Transformando visão estratégica em interfaces de alta performance.
 
-Plataforma institucional da **TERA**, focada em oferecer soluções de gestão estratégica e consultoria empresarial de alto nível. Este projeto prioriza a fidelidade visual ao modelo do Figma e uma experiência de usuário moderna e fluida.
+A TERA — Gestão e Negócios é uma plataforma institucional desenvolvida para oferecer soluções de gestão estratégica e consultoria empresarial de alto nível. Este projeto foca na entrega de uma experiência de usuário (UX) fluida e moderna, mantendo 100% de fidelidade visual ao protótipo concebido no Figma.
 
-## 🛠️ Tecnologias de Front-end
+✨ Diferenciais do Projeto
+Design Sophistication: Uso de tipografia refinada com pesos leves (200 e 300) para uma estética corporativa premium.
 
-* **React:** Biblioteca principal para a construção da interface.
-* **CSS3:** Estilização personalizada com pesos de fonte leves (200 e 300) para um design sofisticado.
-* **React Router Dom:** Gerenciamento de navegação entre as páginas do site.
-* **Vite:** Ferramenta de build para performance otimizada.
+Fidelidade ao Figma: Transposição exata do design para o código.
 
-## 👥 Equipe do Projeto
+Navegação Fluida: Transições de página otimizadas para garantir a melhor experiência de navegação institucional.
 
-* **José Henrique Oliveira**
-* **Guilherme Souza**
+🛠️ Stack Tecnológica
+O projeto utiliza as tecnologias mais modernas do ecossistema Front-end para garantir velocidade e manutenibilidade:
 
-## 🚀 Como Rodar o Front-end
+React: Core da aplicação para construção de componentes modulares.
 
-Siga os passos abaixo para visualizar o site em sua máquina local:
+Vite: Ferramenta de build de próxima geração para um desenvolvimento rápido e otimizado.
 
-1.  **Clone este repositório:**
-    ```bash
-    git clone [https://github.com/seu-usuario/nome-do-repositorio.git](https://github.com/seu-usuario/nome-do-repositorio.git)
-    ```
+React Router Dom: Gerenciamento inteligente de rotas e navegação.
 
-2.  **Acesse a pasta do projeto:**
-    ```bash
-    cd nome-do-repositorio
-    ```
+CSS3 Custom Properties: Estilização personalizada para garantir a identidade visual única da TERA.
 
-3.  **Instale as dependências:**
-    ```bash
-    npm install
-    ```
+👥 Equipe de Desenvolvimento
+Um projeto colaborativo desenvolvido com foco em excelência técnica por:
 
-4.  **Inicie o servidor de desenvolvimento:**
-    ```bash
-    npm run dev
-    ```
+José Henrique Oliveira — Developer
 
-5.  **Acesse no navegador:**
-    Abra o endereço que aparecer no terminal (geralmente `http://localhost:5173`).
+Guilherme Souza — Developer
 
----
+Igor Ferreira — Group Leader
 
-### 📝 Observação
-* O foco da branch `main` é estritamente a execução da interface.
+Matheus Luiz & João Victor Vieira — Developers
 
----
-© 2026 TERA Gestão e Negócios.
+🚀 Como Executar o Projeto
+Para rodar a interface localmente em sua máquina, siga os comandos abaixo:
+
+Clone o repositório:
+
+Bash
+git clone https://github.com/zezo-00/TERA-Front.git
+Entre no diretório:
+
+Bash
+cd TERA-Front
+Instale as dependências:
+
+Bash
+npm install
+Inicie o servidor de desenvolvimento:
+
+Bash
+npm run dev
+O site estará disponível em seu navegador no endereço: http://localhost:5173.
+
+📝 Notas de Desenvolvimento
+A branch main é dedicada exclusivamente à execução e visualização da interface (Front-end).
+
+O desenvolvimento de novas funcionalidades ocorre na branch develop.
+
+© 2026 TERA Gestão e Negócios. Desenvolvido com foco em resultados.
