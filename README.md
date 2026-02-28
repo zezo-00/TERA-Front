@@ -29,10 +29,9 @@ O projeto utiliza as tecnologias mais modernas do ecossistema Front-end para gar
 
 Um projeto colaborativo desenvolvido com foco em excelência técnica por:
 
-* **[José Henrique Oliveira](https://github.com/zezo-00)** — Developer
+* **José Henrique Oliveira** — Developer
 * **Guilherme Souza** — Developer
-* **Igor Ferreira** — Group Leader
-* **Matheus Luiz** & **João Victor Vieira** — Developers
+
 
 ---
 
@@ -83,7 +82,3 @@ O site estará disponível em seu navegador no endereço: `http://localhost:5173
 © 2026 TERA Gestão e Negócios. Desenvolvido com foco em resultados.
 
 ---
-
-**Dica:** Se você quiser deixar esse README ainda mais "matador", você pode adicionar um GIF ou uma screenshot da home do site logo abaixo do título.
-
-Gostaria que eu te ajudasse a criar um texto para a seção de "Funcionalidades" detalhando o que cada página do site faz?
