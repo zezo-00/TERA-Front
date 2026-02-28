@@ -1,73 +1,52 @@
-# React + TypeScript + Vite
+# TERA - Gestão e Negócios 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Plataforma institucional da **TERA**, focada em oferecer soluções de gestão estratégica e consultoria empresarial de alto nível. Este projeto prioriza a fidelidade visual ao modelo do Figma e uma experiência de usuário moderna e fluida.
 
-Currently, two official plugins are available:
+## 🛠️ Tecnologias de Front-end
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **React:** Biblioteca principal para a construção da interface.
+* **CSS3:** Estilização personalizada com pesos de fonte leves (200 e 300) para um design sofisticado.
+* **React Router Dom:** Gerenciamento de navegação entre as páginas do site.
+* **Vite:** Ferramenta de build para performance otimizada.
 
-## React Compiler
+## 👥 Equipe do Projeto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **José Henrique Oliveira**
+* **Guilherme Souza**
 
-## Expanding the ESLint configuration
+## 🚀 Como Rodar o Front-end
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Siga os passos abaixo para visualizar o site em sua máquina local:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1.  **Clone este repositório:**
+    ```bash
+    git clone [https://github.com/seu-usuario/nome-do-repositorio.git](https://github.com/seu-usuario/nome-do-repositorio.git)
+    ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+2.  **Acesse a pasta do projeto:**
+    ```bash
+    cd nome-do-repositorio
+    ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+4.  **Inicie o servidor de desenvolvimento:**
+    ```bash
+    npm run dev
+    ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+5.  **Acesse no navegador:**
+    Abra o endereço que aparecer no terminal (geralmente `http://localhost:5173`).
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+### 📝 Observações
+* Design 100% revisado para seguir o modelo do Figma apresentado em vídeo.
+* Estrutura de pastas organizada para escalabilidade do front-end.
+* O foco da branch `main` é estritamente a execução da interface.
+
+---
+© 2026 TERA Gestão e Negócios.
