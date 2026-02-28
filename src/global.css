@@ -1,0 +1,53 @@
+/* 1. Importando a fonte oficial 'Questrial' do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Questrial&family=Roboto+Condensed:wght@400;700&display=swap');
+
+/* 2. Definindo as variáveis (A Paleta TERA) */
+:root {
+  /* Cores exatas da imagem */
+  --tera-black:      #000000;
+  --tera-blue-dark:  #0F3562; /* Azul Escuro */
+  --tera-blue-mid:   #03387A; /* Azul Médio */
+  --tera-grey:       #D9DAD9; /* Cinza Claro */
+  --tera-white:      #FFFFFF;
+
+  /* Definição de Fontes */
+  --font-title: 'Questrial', sans-serif;
+  --font-body:  'Roboto Condensed', sans-serif; /* Substituto gratuito para TT Commons */
+}
+
+/* 3. Reset (Zerando margens) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 4. Estilos Base */
+body {
+  background-color: var(--tera-white);
+  color: var(--tera-black); /* Texto padrão preto */
+  font-family: var(--font-body); /* Fonte padrão do corpo */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Títulos usam a fonte especial e a cor primária */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+  color: var(--tera-blue-dark);
+  font-weight: 400; /* Questrial geralmente é mais leve */
+}
+
+/* Botões padrão */
+button {
+  cursor: pointer;
+  border: none;
+  background-color: var(--tera-blue-mid);
+  color: var(--tera-white);
+  font-family: var(--font-title);
+  border-radius: 4px;
+  transition: filter 0.2s;
+}
+
+button:hover {
+  filter: brightness(0.9); 
+}
