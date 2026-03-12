@@ -1,0 +1,174 @@
+/* --- ESTRUTURA GERAL --- */
+.page-container {
+  background-color: white;
+  min-height: 100vh;
+}
+
+/* --- 1. HEADER --- */
+.sobre-header {
+  background-color: var(--tera-blue-dark);
+  
+  background-image: linear-gradient(rgba(9, 42, 82, 0.85), rgba(21, 72, 134, 0.85)), url('/assets/images/banner_sobrenos_tera.jpeg');
+  background-size: cover;
+  background-position: center; 
+  color: var(--tera-white);
+  padding: 10rem 8% 9rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.section-label-white {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 200;
+  letter-spacing: 2px;
+  color: var(--tera-white);
+  opacity: 0.8;
+}
+
+.white-line {
+  background-color: var(--tera-white) !important;
+}
+
+.sobre-title {
+  font-family: var(--font-title);
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+  color: var(--tera-white);
+  display: block;
+}
+
+.sobre-subtitle {
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.6;
+  opacity: 0.9;
+  max-width: 800px;
+}
+
+/* --- 2. NOSSA TRAJETÓRIA --- */
+.sobre-trajetoria {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  padding: 8rem 8%;
+  background-color: white;
+}
+
+.trajetoria-image {
+  flex: 1;
+}
+
+.trajetoria-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  object-fit: cover;
+}
+
+.trajetoria-content {
+  flex: 1;
+}
+
+.trajetoria-title {
+  font-family: var(--font-title);
+  font-size: 2.8rem;
+  color: var(--tera-blue-dark);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.trajetoria-text {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+/* --- 3. PILARES FUNDAMENTAIS --- */
+.pillars-section-sobre {
+  padding: 8rem 8%;
+  text-align: center;
+  background-color: #ebebeb;
+}
+
+.pillars-header {
+  margin-bottom: 5rem;
+}
+
+.pillars-label {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  color: #999;
+  display: block;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.pillars-title {
+  font-family: var(--font-title);
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: var(--tera-blue-dark);
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+}
+
+.pillar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.pillar-icon-box {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: white;
+  color: var(--tera-blue-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.pillar-item:hover .pillar-icon-box {
+  border-color: var(--tera-blue-mid);
+  color: var(--tera-blue-mid);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+}
+
+.pillar-item h4 {
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  color: var(--tera-blue-dark);
+  font-weight: 400;
+}
+
+.pillar-item p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  font-weight: 300;
+}

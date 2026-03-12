@@ -5,10 +5,13 @@
 :root {
   /* Cores exatas da imagem */
   --tera-black:      #000000;
+  --tera-black2:     #161616;
   --tera-blue-dark:  #0F3562; /* Azul Escuro */
   --tera-blue-mid:   #03387A; /* Azul Médio */
   --tera-grey:       #D9DAD9; /* Cinza Claro */
-  --tera-white:      #FFFFFF;
+  --tera-white:      #FFFFFF; /* branco total */
+  --tera-offwhite:    #f3f3f3; 
+  
 
   /* Definição de Fontes */
   --font-title: 'Questrial', sans-serif;
@@ -24,7 +27,7 @@
 
 /* 4. Estilos Base */
 body {
-  background-color: var(--tera-white);
+  background-color: var(--tera-grey);
   color: var(--tera-black); /* Texto padrão preto */
   font-family: var(--font-body); /* Fonte padrão do corpo */
   -webkit-font-smoothing: antialiased;

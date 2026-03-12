@@ -1,0 +1,133 @@
+.footer-section {
+  background-color: #0c2b52;
+  color: var(--tera-white);
+  padding: 5rem 8% 2rem;
+  font-family: var(--font-body);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 1.5rem;
+}
+
+.footer-logo-img {
+  width: 55px;
+  height: 55px;
+  background-color: var(--tera-white);
+  border-radius: 6px;
+  padding: 0px;
+  object-fit: contain;
+}
+
+.footer-logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.tera-name {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.tera-sub {
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.footer-description {
+  font-weight: 300;
+  line-height: 1.6;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+  max-width: 350px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--tera-white);
+  transition: 0.3s;
+}
+
+.social-btn:hover {
+  background-color: var(--tera-blue-mid);
+  transform: translateY(-3px);
+}
+
+.footer-links h4 {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  color: var(--tera-white);
+  text-transform: uppercase;
+}
+
+.footer-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 0;
+}
+
+.footer-links a {
+  color: var(--tera-white);
+  text-decoration: none;
+  font-weight: 300;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  color: #fff;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.8rem;
+  opacity: 0.6;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-legal a {
+  color: var(--tera-white);
+  text-decoration: none;
+}
+
+.footer-legal a:hover {
+  opacity: 1;
+}

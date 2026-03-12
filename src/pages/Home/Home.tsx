@@ -1,4 +1,7 @@
+import { BarChart, Layers, Users, Shield } from 'lucide-react';
 import './home.css';
+import { Link } from 'react-router-dom';
+import { Footer } from '../../components/Footer/Footer';
 
 export const Home = () => {
   return (
@@ -16,16 +19,21 @@ export const Home = () => {
             Consultoria empresarial de alto nível para empresas que<br />
             buscam crescimento sustentável e inovação constante.
           </p>
+
           <div className="hero-buttons">
+          <Link to="/contato">
             <button className="btn-outline">
-              FALE CONOSCO <span className="arrow">→</span>
+            FALE CONOSCO <span className="arrow">→</span>
             </button>
-            <button className="btn-solid">NOSSA MISSÃO</button>
+          </Link>
+              
+              <Link to="/sobre">            <button className="btn-solid">NOSSA MISSÃO</button>
+              </Link>
           </div>
         </div>
       </section>
 
-      {/* 2. SEÇÃO EXPERTISE (0:05 do vídeo) */}
+      {/* 2. SEÇÃO EXPERTISE */}
       <section className="expertise-section">
         <div className="section-header">
           <div className="label-group">
@@ -40,30 +48,33 @@ export const Home = () => {
 
         <div className="expertise-grid">
           <div className="expertise-card">
-            <div className="card-icon">📊</div>
+            <div className="icon-box blue-box">
+              <BarChart size={36} strokeWidth={1.5} />
+            </div>
             <h3>Gestão Financeira</h3>
             <p>Análise profunda de indicadores e reestruturação de fluxo de caixa para maximizar lucros.</p>
-            <button className="card-link">SAIBA MAIS →</button>
           </div>
           <div className="expertise-card">
-            <div className="card-icon">🤝</div>
+            <div className="icon-box blue-box">
+              <Layers size={36} strokeWidth={1.5} />
+            </div>
             <h3>Consultoria Estratégica</h3>
             <p>Planejamento de longo prazo e definição de metas claras para o crescimento do seu negócio.</p>
-            <button className="card-link">SAIBA MAIS →</button>
           </div>
           <div className="expertise-card">
-            <div className="card-icon">👥</div>
+            <div className="icon-box grey-box">
+              <Users size={36} strokeWidth={1.5} />
+            </div>
             <h3>Recursos Humanos</h3>
             <p>Desenvolvimento de lideranças e gestão de talentos para criar equipes de alta performance.</p>
-            <button className="card-link">SAIBA MAIS →</button>
           </div>
         </div>
       </section>
 
-      {/* 3. SEÇÃO OPORTUNIDADES (0:08 do vídeo) */}
+      {/* 3. SEÇÃO OPORTUNIDADES */}
       <section className="opportunities-section">
         <div className="opp-image-container">
-          <img src="/assets/images/consultoria.jpg" alt="Consultoria TERA" className="opp-img" />
+          <img src="/assets/images/consultoria.png" alt="Consultoria TERA" className="opp-img" />
         </div>
         <div className="opp-text-container">
           <div className="label-group">
@@ -76,45 +87,27 @@ export const Home = () => {
             <br /><br />
             Nossa metodologia própria já ajudou diversas empresas a redefinirem seus caminhos e alcançarem resultados expressivos.
           </p>
-          <button className="btn-outline-dark">CONHEÇA NOSSA HISTÓRIA</button>
+          <Link to="/sobre">
+                    <button className="btn-outline-dark">CONHEÇA NOSSA HISTÓRIA</button>
+          </Link>
         </div>
       </section>
 
-      {/* 4. PILARES FUNDAMENTAIS (0:11 do vídeo) */}
-      <section className="pillars-section">
-        <div className="pillars-header">
-            <span className="pillars-label">PILARES FUNDAMENTAIS</span>
-            <h2 className="pillars-title">Valores que Guiam Nossas Decisões</h2>
-        </div>
-        <div className="pillars-grid">
-            <div className="pillar-item">
-                <div className="pillar-icon-box">🎯</div>
-                <h4>Resultado</h4>
-                <p>Foco obsessivo em métricas e entregas concretas.</p>
-            </div>
-            <div className="pillar-item">
-                <div className="pillar-icon-box">⭐</div>
-                <h4>Excelência</h4>
-                <p>Compromisso com a qualidade superior em cada detalhe.</p>
-            </div>
-            <div className="pillar-item">
-                <div className="pillar-icon-box">⚖️</div>
-                <h4>Ética</h4>
-                <p>Transparência e integridade em todas as relações.</p>
-            </div>
-            <div className="pillar-item">
-                <div className="pillar-icon-box">💡</div>
-                <h4>Inovação</h4>
-                <p>Busca constante por novas tecnologias e soluções.</p>
-            </div>
-        </div>
+      {/* 4. CITAÇÃO E NEWSLETTER */}
+      <section className="quote-newsletter-section">
+        <Shield size={64} strokeWidth={1.2} className="quote-icon" />
+        <h2 className="quote-text">
+          "A excelência não é um ato, mas um hábito.<br />
+          Na TERA, construímos a excelência dia após dia."
+        </h2>
+        <div className="quote-divider"></div>
+        <Link to="/newsletter">        <button className="btn-newsletter">ASSINE NOSSA NEWSLETTER</button>
+</Link>
       </section>
 
-      {/* 5. CTA FINAL (0:13 do vídeo) */}
-      <section className="cta-final">
-          <h2>Pronto para elevar o patamar da sua empresa?</h2>
-          <button className="btn-outline">AGENDE UMA CONSULTORIA</button>
-      </section>
+      {/* 5. FOOTER COMPONENTIZADO */}
+      <Footer />
+      
     </div>
   );
 };
