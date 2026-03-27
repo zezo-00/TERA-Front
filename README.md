@@ -68,13 +68,13 @@ npm run dev
 
 
 
-O site estará disponível em seu navegador no endereço: `http://localhost:5173`.
+O site estará disponível em seu navegador no endereço: `http://localhost:3000`.
 
 ---
 
 ### 📝 Notas de Desenvolvimento
 
-* A branch `main` é dedicada exclusivamente à execução e visualização da **interface (Front-end)**.
+
 * O desenvolvimento de novas funcionalidades ocorre na branch `develop`.
 
 ---
