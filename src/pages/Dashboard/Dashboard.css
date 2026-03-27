@@ -1,0 +1,155 @@
+/* --- CONTAINER PRINCIPAL --- */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8fafc; 
+  font-family: 'Inter', sans-serif; 
+}
+
+/* --- MENU LATERAL (SIDEBAR) --- */
+.sidebar {
+  width: 260px;
+  background-color: #ffffff;
+  border-right: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.sidebar-logo h2 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  letter-spacing: 2px;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1; /*Navegação empurra o footer para baixo */
+}
+
+.nav-item {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+.nav-item.active {
+  background-color: #f1f5f9;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+}
+
+.logout-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #ef4444; 
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.logout-btn:hover {
+  background-color: #fef2f2;
+}
+
+/* --- ÁREA PRINCIPAL --- */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- CABEÇALHO DA DASHBOARD --- */
+.top-header {
+  height: 80px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2.5rem;
+}
+
+.top-header h1 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #0f172a;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* --- ÁREA DE CONTEÚDO (ONDE VÃO OS GRÁFICOS) --- */
+.content-area {
+  padding: 2.5rem;
+  flex: 1;
+}
+
+/* --- AVISO DE CONSTRUÇÃO --- */
+.construction-notice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 2px dashed #cbd5e1;
+  text-align: center;
+  padding: 3rem;
+}
+
+.construction-icon {
+  color: #94a3b8;
+  margin-bottom: 1.5rem;
+}
+
+.construction-notice h2 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.construction-notice p {
+  color: #64748b;
+  font-size: 0.95rem;
+  max-width: 400px;
+}
