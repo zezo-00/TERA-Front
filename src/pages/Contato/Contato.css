@@ -207,3 +207,63 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
+
+/* --- RESPONSIVIDADE MOBILE: FALE CONOSCO --- */
+@media (max-width: 768px) {
+  
+  /* 1. FUNDO E ESPAÇAMENTOS GERAIS */
+  .contact-page-wrapper {
+    padding: 2rem 1.5rem; 
+    height: auto;
+  }
+
+  /* 2. O CARD PRINCIPAL  */
+  .contact-card {
+    flex-direction: column;
+  }
+
+  /* 3. LADO AZUL (Informações) */
+  .contact-info-panel {
+    padding: 3rem 1.5rem;
+    text-align: center; 
+    align-items: center;
+  }
+
+  .contact-info-panel h2 {
+    font-size: 2rem;
+  }
+
+  .info-subtitle {
+    margin-bottom: 2rem;
+  }
+
+  .contact-details {
+    align-items: center;
+  }
+
+  .detail-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  /* 4. LADO BRANCO (Formulário) */
+  .contact-form-panel {
+    padding: 3rem 1.5rem;
+  }
+
+  .form-panel-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .form-subtitle {
+    text-align: center;
+  }
+
+  .btn-enviar {
+    width: 100%; 
+    padding: 1.2rem; 
+    justify-content: center;
+  }
+}

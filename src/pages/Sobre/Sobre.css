@@ -170,3 +170,56 @@
   line-height: 1.6;
   font-weight: 300;
 }
+
+/* --- RESPONSIVIDADE MOBILE: SOBRE NÓS --- */
+@media (max-width: 768px) {
+  
+  /* 1. HEADER */
+  .sobre-header {
+    padding: 8rem 1.5rem 4rem; 
+  }
+
+  .sobre-title {
+    font-size: 2.2rem; 
+    margin-bottom: 1.5rem;
+  }
+
+  .sobre-subtitle {
+    font-size: 1rem;
+  }
+
+  /* 2. NOSSA TRAJETÓRIA */
+  .sobre-trajetoria {
+    flex-direction: column; 
+    padding: 4rem 1.5rem;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .trajetoria-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .trajetoria-text {
+    text-align: center;
+  }
+
+  /* 3. PILARES FUNDAMENTAIS */
+  .pillars-section-sobre {
+    padding: 4rem 1.5rem;
+  }
+
+  .pillars-header {
+    margin-bottom: 3rem;
+  }
+
+  .pillars-title {
+    font-size: 2rem;
+  }
+
+  .pillars-grid {
+    grid-template-columns: 1fr; 
+    gap: 2rem;
+  }
+}

@@ -294,3 +294,77 @@ a {
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
+
+
+/* --- RESPONSIVIDADE MOBILE TERA --- */
+@media (max-width: 768px) {
+  
+  /* 1. HERO SECTION (Topo) */
+  .hero-section { 
+    padding: 6rem 1.5rem; /* Reduz os espaços laterais gigantes */
+    min-height: auto;
+  }
+
+  .hero-title {
+    font-size: 2.5rem; 
+    line-height: 1.2;
+    word-wrap: break-word; 
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column; 
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .btn-outline, .btn-solid, .btn-outline-dark {
+    width: 100%;
+    justify-content: center; /* Centraliza o texto e o ícone dentro do botão */
+  }
+
+  /* 2. EXPERTISE (Onde os Cards estavam vazando) */
+  .expertise-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .section-main-title {
+    font-size: 2.2rem; /* Diminui o título da seção */
+  }
+
+  .expertise-grid {
+    grid-template-columns: 1fr; /* A MÁGICA: Força a grade a ter apenas 1 coluna no celular */
+    gap: 1.5rem;
+  }
+
+  /* 3. OPORTUNIDADES (Foto + Texto) */
+  .opportunities-section {
+    flex-direction: column; /* Coloca a foto em cima e o texto embaixo */
+    padding: 4rem 1.5rem;
+    gap: 2rem;
+    text-align: center; /* Centraliza o texto para ficar mais bonito no mobile */
+  }
+
+  .opp-title {
+    font-size: 2.2rem;
+  }
+
+  /* 4. CITAÇÃO E NEWSLETTER */
+  .quote-newsletter-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .quote-text {
+    font-size: 1.8rem; /* Reduz a fonte gigante da citação */
+    margin-bottom: 2rem;
+  }
+
+  .btn-newsletter {
+    width: 100%; /* Botão da newsletter esticado na tela toda */
+    padding: 1.2rem;
+  }
+}

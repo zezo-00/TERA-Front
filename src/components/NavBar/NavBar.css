@@ -84,3 +84,16 @@
   color: #0F3562; 
   transition: 0.3s;
 }
+
+/*responsividade mobile */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-wrap: wrap; 
+    padding: 1rem;
+    justify-content: center; /* Centraliza a Logo */
+  }
+
+  .navbar-links {
+    display: none; 
+  }
+}
