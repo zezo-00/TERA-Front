@@ -208,6 +208,63 @@
   box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
+
+/* --- ESTILOS DO POP-UP (NOVO) --- */
+.popup-mensagem {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  animation: slideInRight 0.4s ease forwards;
+}
+
+/* Variação de cor para ERRO */
+.popup-mensagem.erro {
+  background-color: #E63946;
+}
+
+/* Variação de cor para SUCESSO */
+.popup-mensagem.sucesso {
+  background-color: #2A9D8F; 
+}
+
+.popup-mensagem button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0.8;
+  padding: 0;
+  margin-left: 10px;
+}
+
+.popup-mensagem button:hover {
+  opacity: 1;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
 /* --- RESPONSIVIDADE MOBILE: FALE CONOSCO --- */
 @media (max-width: 768px) {
   

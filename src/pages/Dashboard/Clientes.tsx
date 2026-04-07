@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react'; 
 import './clientes.css';
-
+import { formatarDoc, formatarTelefone } from '../../utils/formatters';
+import { Toast } from '../../components/Toast/Toast';
 
 export const Clientes = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // TOAST 
+  const [mensagemToast, setMensagemToast] = useState({ texto: '', tipo: '' as 'sucesso' | 'erro' });
 
   const [formData, setFormData] = useState({
     name: '',
@@ -14,28 +18,31 @@ export const Clientes = () => {
 
   const [clientes, setClientes] = useState<any[]>([]);
 
- const buscarClientes = async () => {
-  try {
-    const token = localStorage.getItem('tera_token'); 
-    const resposta = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/list/customer`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}` 
+  const mostrarAviso = (texto: string, tipo: 'sucesso' | 'erro') => {
+    setMensagemToast({ texto, tipo });
+    setTimeout(() => setMensagemToast({ texto: '', tipo: 'erro' }), 4000);
+  };
+
+  const buscarClientes = async () => {
+    try {
+      const token = localStorage.getItem('tera_token'); 
+      const resposta = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/list/customer`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}` 
+        }
+      });
+
+      const dados = await resposta.json();
+      
+      if (resposta.ok) {
+        setClientes(dados.customers || dados.data?.data || dados || []); 
       }
-    });
-
-    const dados = await resposta.json();
-    
-    console.log("CONTEÚDO DO BANCO:", dados);
-
-    if (resposta.ok) {
-      setClientes(dados.customers || dados.data?.data || dados || []); 
+    } catch (error) {
+      console.error('Erro de conexão.', error);
     }
-  } catch (error) {
-    console.error('Erro de conexão.', error);
-  }
-};
+  };
 
   useEffect(() => {
     buscarClientes();
@@ -54,22 +61,32 @@ export const Clientes = () => {
       const dados = await resposta.json();
 
       if (resposta.ok) {
-        alert("Cliente cadastrado com sucesso no PostgreSQL!");
+        
+        mostrarAviso("Cliente cadastrado com sucesso!", "sucesso");
         setIsModalOpen(false); 
         setFormData({ name: '', email: '', doc: '', phone: '' }); 
         
-        //Recarrega a tabela na mesma hora sem precisar do f5
         buscarClientes(); 
       } else {
-        alert("Erro do Zod: " + JSON.stringify(dados.error || dados.message));
+        
+        const erroMsg = dados.error?.[0]?.message || dados.message || "Erro ao cadastrar cliente.";
+        mostrarAviso(erroMsg, "erro");
       }
     } catch (error) {
-      alert('Erro de conexão com o servidor.');
+      // 5. ERRO DE CONEXÃO NO TOAST
+      mostrarAviso('Erro de conexão com o servidor.', 'erro');
     }
   };
 
   return (
     <div className="clientes-wrapper">
+      
+      
+      <Toast 
+        mensagem={mensagemToast.texto} 
+        tipo={mensagemToast.tipo as 'sucesso' | 'erro'} 
+        onClose={() => setMensagemToast({ texto: '', tipo: 'erro' })} 
+      />
       
       <div className="clientes-toolbar">
         <input 
@@ -97,11 +114,13 @@ export const Clientes = () => {
               <input type="email" placeholder="E-mail" required
                 value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} />
               
-              <input type="text" placeholder="CPF ou CNPJ (apenas números)" required
-                value={formData.doc} onChange={e => setFormData({...formData, doc: e.target.value})} />
+              {/* TRAVA DE NÚMEROS E TAMANHO NO CPF/CNPJ */}
+              <input type="text" placeholder="CPF ou CNPJ (apenas números)" required maxLength={14}
+                value={formData.doc} onChange={e => setFormData({...formData, doc: e.target.value.replace(/\D/g, '')})} />
               
-              <input type="text" placeholder="Telefone (apenas números)" required
-                value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
+              {/* TRAVA DE NÚMEROS E TAMANHO NO TELEFONE */}
+              <input type="text" placeholder="Telefone (apenas números)" required maxLength={11}
+                value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value.replace(/\D/g, '')})} />
 
               <div className="modal-actions">
                 <button type="button" className="btn-cancel" onClick={() => setIsModalOpen(false)}>Cancelar</button>
@@ -124,7 +143,6 @@ export const Clientes = () => {
             </tr>
           </thead>
           <tbody>
-            {/*  Array.isArray antes do map para a segurança e para rodar a tabela */}
             {Array.isArray(clientes) && clientes.map((cliente) => (
               <tr key={cliente.id}>
                 <td className="col-nome">
@@ -132,8 +150,8 @@ export const Clientes = () => {
                   {cliente.name}
                 </td>
                 <td>{cliente.email}</td>
-                <td>{cliente.doc}</td>
-                <td>{cliente.phone}</td>
+                <td>{formatarDoc(cliente.doc)}</td> 
+                <td>{formatarTelefone(cliente.phone)}</td>
               </tr>
             ))}
           </tbody>

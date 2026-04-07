@@ -4,7 +4,7 @@ import { Footer } from '../../components/Footer/Footer';
 import './contato.css';
 
 export const Contato = () => {
-  // 1. ESTADO PARA GUARDAR OS DADOS 
+  // 1. ESTADO PARA GUARDAR OS DADOS DO FORMULÁRIO
   const [formData, setFormData] = useState({
     name: '',
     doc: '',
@@ -12,43 +12,75 @@ export const Contato = () => {
     email: '',
   });
 
-  // 2. FUNÇÃO PARA ATUALIZAR OS DADOS ENQUANTO O USUÁRIO DIGITA
+  // 2. ESTADO PARA CONTROLAR O POP-UP (NOVO)
+  const [popup, setPopup] = useState({ visivel: false, texto: '', tipo: '' });
+
+  // 3. FUNÇÃO PARA DISPARAR O POP-UP NA TELA
+  const mostrarPopup = (texto: string, tipo: string) => {
+    setPopup({ visivel: true, texto, tipo });
+    setTimeout(() => {
+      setPopup({ visivel: false, texto: '', tipo: '' });
+    }, 4000); // Some sozinho após 4 segundos
+  };
+
+  // 4. FUNÇÃO PARA ATUALIZAR OS DADOS ENQUANTO O USUÁRIO DIGITA
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
+    let { name, value } = e.target;
+
+    // Trava de segurança para o CPF/CNPJ: aceita APENAS números
+    if (name === 'doc') {
+      value = value.replace(/\D/g, ''); //  /\D/g remove tudo que não for dígito (0-9)
+    }
+
     setFormData(prevState => ({
       ...prevState,
       [name]: value
     }));
   };
 
-  // função para o envio para o back
+ // 5. FUNÇÃO PARA O ENVIO PARA O BACK-END
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault(); 
 
     try {
-const response = await fetch(`${import.meta.env.VITE_API_URL}/api/create/customer`, {  
-      method: 'POST',
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/create/customer`, {  
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData), 
       });
 
+      // LÊ O CONTEÚDO DA RESPOSTA (MESMO SE FOR ERRO)
+      const data = await response.json();
+
       if (response.ok) {
-        alert('Mensagem enviada com sucesso! Nossa equipe entrará em contato.');
-        // limpa o formulário após enviar
+        mostrarPopup('Mensagem enviada com sucesso! Nossa equipe entrará em contato.', 'sucesso');
         setFormData({ name: '', doc: '', phone: '', email: '' });
       } else {
-        alert('Ocorreu um erro ao enviar. Tente novamente.');
+        if (data.error && data.error.length > 0) {
+          mostrarPopup(`Erro: ${data.error[0].message}`, 'erro');
+        } else {
+          mostrarPopup(data.message || 'Ocorreu um erro ao enviar. Tente novamente.', 'erro');
+        }
       }
     } catch (error) {
       console.error('Erro na requisição:', error);
-      alert('Erro ao conectar com o servidor. Verifique se o back-end está rodando.');
+      mostrarPopup('Erro ao conectar com o servidor. Verifique se o back-end está rodando.', 'erro');
     }
   };
 
   return (
     <div className="page-container">
+      
+      {/* RENDERIZAÇÃO DO POP-UP DE ERRO OU SUCESSO */}
+      {popup.visivel && (
+        <div className={`popup-mensagem ${popup.tipo}`}>
+          <span>{popup.tipo === 'erro' ? '⚠️' : '✅'} {popup.texto}</span>
+          <button onClick={() => setPopup({ visivel: false, texto: '', tipo: '' })}>X</button>
+        </div>
+      )}
+
       <section className="contact-page-wrapper">
         <div className="contact-card">
           
@@ -91,7 +123,6 @@ const response = await fetch(`${import.meta.env.VITE_API_URL}/api/create/custome
               Preencha os dados abaixo para entrar em contato com nossa equipe de especialistas.
             </p>
 
-            {/* O FORMULÁRIO AGORA RECEBE O onSubmit */}
             <form className="tera-contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label>NOME COMPLETO</label>
@@ -115,9 +146,10 @@ const response = await fetch(`${import.meta.env.VITE_API_URL}/api/create/custome
                   <input 
                     type="text" 
                     name="doc"
-                    placeholder="000.000.000-00" 
+                    placeholder="CPF/CNPJ" 
                     value={formData.doc}
                     onChange={handleChange}
+                    maxLength={14}
                     required
                   />
                 </div>
@@ -153,7 +185,6 @@ const response = await fetch(`${import.meta.env.VITE_API_URL}/api/create/custome
                 </div>
               </div>
 
-              {/* O BOTÃO AGORA É DO TIPO SUBMIT */}
               <button type="submit" className="btn-enviar">
                 ENVIAR
               </button>
