@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './clientes.css'; 
+import './clientes.css';
 import { Toast } from '../../components/Toast/Toast';
+import { Pencil, Trash2 } from 'lucide-react';
 
 export const Colaboradores = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -146,8 +147,26 @@ const handleDelete = async (id: number) => {
                 <td>{c.name}</td>
                 <td>{c.email}</td>
                 <td>
-                  <button type='button' onClick={() => abrirEdicao(c)}>Editar</button>
-                      <button type="button" onClick={() => handleDelete(c.id)}>Excluir</button>
+                  <div className="table-actions">
+                    <button
+                      type="button"
+                      className="btn-icon btn-edit"
+                      onClick={() => abrirEdicao(c)}
+                      aria-label="Editar colaborador"
+                      title="Editar"
+                    >
+                      <Pencil size={16} />
+                    </button>
+                    <button
+                      type="button"
+                      className="btn-icon btn-delete"
+                      onClick={() => handleDelete(c.id)}
+                      aria-label="Excluir colaborador"
+                      title="Excluir"
+                    >
+                      <Trash2 size={16} />
+                    </button>
+                  </div>
                 </td>
               </tr>
             ))}

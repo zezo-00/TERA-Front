@@ -16,7 +16,7 @@ export const Login = () => {
 
     try {
       // Faz o POST para a rota de login do backend
-      const resposta = await fetch('http://localhost:3001/api/user/login', {
+      const resposta = await fetch(`${import.meta.env.VITE_API_URL}/api/user/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

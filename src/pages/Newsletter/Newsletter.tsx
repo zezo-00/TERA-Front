@@ -1,6 +1,6 @@
 import { Linkedin, TrendingUp, Users, BookOpen } from 'lucide-react';
 import { Footer } from '../../components/Footer/Footer';
-import './newsletter.css';
+import './Newsletter.css';
 
 export const Newsletter = () => {
   return (

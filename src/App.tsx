@@ -7,6 +7,8 @@ import { Contato } from './pages/Contato/Contato';
 import { Sobre } from './pages/Sobre/Sobre';           
 import { Newsletter } from './pages/Newsletter/Newsletter';
 import { Dashboard } from './pages/Dashboard/Dashboard';
+import { RedefinirSenha } from './pages/RedefinirSenha/RedefinirSenha';
+import { EsqueciSenha } from './pages/EsqueciSenha/EsqueciSenha';
 
 
 const ClientLayout = () => {
@@ -35,6 +37,8 @@ function App() {
         {/* Rotas Restritas (Sem NavBar) */}
         <Route path="/auth" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/forgot-password" element={ <EsqueciSenha />} />
+        <Route path="/reset-password" element= { <RedefinirSenha />} />
 
       </Routes>
     </BrowserRouter>
