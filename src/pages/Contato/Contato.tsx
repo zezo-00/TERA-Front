@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Phone, Mail, User, FileText } from 'lucide-react';
 import { Footer } from '../../components/Footer/Footer';
-import './contato.css';
+import './Contato.css';
 
 export const Contato = () => {
   // 1. ESTADO PARA GUARDAR OS DADOS DO FORMULÁRIO

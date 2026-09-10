@@ -23,7 +23,7 @@ export function ContactForm() {
     setStatus({ type: 'loading', message: 'Enviando...' });
 
     try {
-      await axios.post('http://localhost:3000/api/create/customer', formData);
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/create/customer`, formData);
 
       setStatus({ type: 'success', message: 'Cadastro realizado com sucesso!' });
       setFormData({ name: '', email: '', phone: '', doc: '' }); 
