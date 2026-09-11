@@ -7,10 +7,17 @@ import { Colaboradores } from './Colaboradores';
 export const Dashboard = () => {
   const navigate = useNavigate();
   const [abaAtiva, setAbaAtiva] = useState('visao-geral'); 
+  const [role, setRole] = useState<string | null>(null);
 
   useEffect(() => {
     const token = localStorage.getItem('tera_token');
-    if (!token) navigate('/auth'); 
+    if (!token) {
+      navigate('/auth');
+      return;
+    }
+
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    setRole(payload.role);
   }, [navigate]);
 
   const handleLogout = () => {
@@ -43,13 +50,15 @@ export const Dashboard = () => {
             Clientes
           </button>
 
-          {/* NOVO BOTÃO NO MENU */}
+          {/* SÓ PARA ADMIN */}
+          {role === 'ADMIN' && (
           <button 
             className={`nav-item ${abaAtiva === 'colaboradores' ? 'active' : ''}`}
             onClick={() => setAbaAtiva('colaboradores')}
           >
             Colaboradores
           </button>
+          )}
         </nav>
 
         <div className="sidebar-footer">
@@ -77,7 +86,7 @@ export const Dashboard = () => {
           
           {abaAtiva === 'clientes' && <Clientes />}
           
-          {abaAtiva === 'colaboradores' && <Colaboradores />}
+          {abaAtiva === 'colaboradores' && role === 'ADMIN' && <Colaboradores />}
         </section>
       </main>
     </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.css'; 
 
 export const Login = () => {
@@ -12,10 +12,10 @@ export const Login = () => {
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setErro(''); // Limpa a mensagem de erro antes de tentar logar de novo
+    setErro(''); 
 
     try {
-      // Faz o POST para a rota de login do backend
+      // POST para a rota de login do backend
       const resposta = await fetch(`${import.meta.env.VITE_API_URL}/api/user/login`, {
         method: 'POST',
         headers: {
@@ -27,15 +27,12 @@ export const Login = () => {
       const dados = await resposta.json();
 
       if (resposta.ok) {
-        // Se a senha e email baterem no PostgreSQL, salva o token e entra
         localStorage.setItem('tera_token', dados.token);
         navigate('/dashboard');
       } else {
-        // Se der erro , exibe a mensagem retornada pelo back
         setErro(dados.mensagem || 'E-mail ou senha incorretos.');
       }
     } catch (error) {
-      // Cai aqui se o backend estiver desligado ou der erro de rede
       setErro('Erro de conexão com o servidor.');
     }
   };
@@ -78,6 +75,10 @@ export const Login = () => {
             Entrar
           </button>
         </form>
+
+          <p className="auth-hint">
+          <Link to="/forgot-password">Esqueci minha senha</Link>
+        </p>
 
       </div>
     </div>
