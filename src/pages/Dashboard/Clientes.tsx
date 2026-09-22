@@ -26,7 +26,7 @@ export const Clientes = () => {
   const buscarClientes = async () => {
     try {
       const token = localStorage.getItem('tera_token'); 
-      const resposta = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/list/customer`, {
+      const resposta = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/costumer/list`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

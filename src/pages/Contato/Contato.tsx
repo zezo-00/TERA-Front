@@ -66,7 +66,7 @@ export const Contato = () => {
       }
     } catch (error) {
       console.error('Erro na requisição:', error);
-      mostrarPopup('Erro ao conectar com o servidor. Verifique se o back-end está rodando.', 'erro');
+      mostrarPopup('Erro ao conectar com o servidor.', 'erro');
     }
   };
 
